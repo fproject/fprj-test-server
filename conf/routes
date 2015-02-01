@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET           /                          controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file              controllers.Assets.at(path="/public", file)
+
+GET           /users/:id                 controllers.UserController.findOne(id: Long)
+GET           /users                     controllers.UserController.findAll
+POST          /users                     controllers.UserController.create
+PUT           /users/:id                 controllers.UserController.update(id: Long)
+PATCH         /users/:id                 controllers.UserController.update(id: Long)
+DELETE        /users/:id                 controllers.UserController.remove(id: Long)
+
+POST          /users/save                controllers.UserController.save
+POST          /users/batch-save          controllers.UserController.batchSave
+POST          /users/remove/:id          controllers.UserController.remove(id: Long)
+POST          /users/batch-remove        controllers.UserController.batchRemove
+
+#GET           /issue/findAll         controllers.IssueController.findAll
+#GET           /issue/find/:id        controllers.IssueController.findOne(id: Long)
+#POST        /issue/        controllers.IssueController.create
+#GET         /getEmployees           controllers.Application.test
+#POST          /*uri                  controllers.Application.other(uri)
+#POST          /                      controllers.Application.other(uri = "")
+#GET         /test/testGetMethod     controllers.TestController.testGetMethod
