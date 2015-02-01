@@ -10,7 +10,7 @@ object Application extends Controller {
   }
 
   def other(uri: String) = Action { req =>
-    Ok("<amfx ver='3'><header name='playtest' mustUnderstand='false'></header><body></body></amfx>")
+    Ok("<amfx ver='3'><header name='fprjtest' mustUnderstand='false'></header><body></body></amfx>")
   }
 
   def test = Action { req =>
